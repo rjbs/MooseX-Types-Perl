@@ -56,8 +56,8 @@ The use of an apostrophe as a package separator is not permitted.
 
 =cut
 
-subtype ModuleName,  as Str, where { _CLASS($_) };
-subtype PackageName, as Str, where { _CLASS($_) };
+subtype ModuleName,  as Str, where { ! /\P{ASCII}/ && _CLASS($_) };
+subtype PackageName, as Str, where { ! /\P{ASCII}/ && _CLASS($_) };
 
 =head2 DistName
 
@@ -74,7 +74,11 @@ would look like has not seemed worth it, yet.
 
 subtype DistName,
   as Str,
-  where   { return if /:/; (my $str = $_) =~ s/-/::/g; _CLASS($str) },
+  where   {
+    return if /:/;
+    (my $str = $_) =~ s/-/::/g;
+    $str !~ /\P{ASCII}/ && _CLASS($str)
+  },
   message {
     /::/
     ? "$_ looks like a module name, not a dist name"

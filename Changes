@@ -1,6 +1,7 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+          forbid non-ASCII in pkg, dist, module
 
 0.101340  2010-05-14 23:08:06 America/New_York
           first release!

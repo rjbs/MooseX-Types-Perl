@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 
+use charnames ':full';
 use MooseX::Types::Perl -all;
 use Test::More;
 
@@ -8,6 +9,14 @@ use Test::More;
   ok(is_LaxVersionStr('1.234'), "1.234 is a lax version string");
   my $obj = to_VersionObject('1.234');
   is($obj->stringify, '1.234', "we can coerce and restring a LaxVersionStr");
+}
+
+{
+  my $bad = "Queensr\N{LATIN SMALL LETTER Y WITH DIAERESIS}che";
+
+  ok( ! is_DistName($bad),    'Queensryche (with diaeresis) <> dist name');
+  ok( ! is_PackageName($bad), 'Queensryche (with diaeresis) <> pkg name');
+  ok( ! is_ModuleName($bad),  'Queensryche (with diaeresis) <> module name');
 }
 
 {
