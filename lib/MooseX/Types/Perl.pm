@@ -89,7 +89,9 @@ subtype DistName,
 
 =head2 Identifier
 
-An Identifier is something that could be used as a variable name.  Generally,
+An L<Identifier|perldata/"Variable-names"> is something that could be used as a
+variable name or other identifier (filehandle, directory handle, subroutine
+name, format name, or label).  Generally,
 it's a bunch of alphanumeric characters not starting with a digit.
 
 Although Perl identifiers may contain non-ASCII characters in some

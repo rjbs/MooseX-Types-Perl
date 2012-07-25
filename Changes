@@ -1,6 +1,7 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+          documentation patch for Identifiers
 
 0.101341  2011-12-23 17:18:04 America/New_York
           forbid non-ASCII in pkg, dist, module
