@@ -1,6 +1,7 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+          documentation patch for Identifiers
 
 0.101342  2013-10-05 09:13:49 America/New_York
           update bugtracker and repo
