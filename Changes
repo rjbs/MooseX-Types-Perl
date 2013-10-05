@@ -2,6 +2,9 @@ Revision history for {{ $dist->name }}
 
 {{$NEXT}}
 
+0.101342  2013-10-05 09:13:49 America/New_York
+          update bugtracker and repo
+
 0.101341  2011-12-23 17:18:04 America/New_York
           forbid non-ASCII in pkg, dist, module
 
