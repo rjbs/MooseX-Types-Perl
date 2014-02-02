@@ -1,5 +1,6 @@
 package MooseX::Types::Perl;
 # ABSTRACT: Moose types that check against Perl syntax
+
 use MooseX::Types -declare => [ qw(
   DistName
 
@@ -89,10 +90,11 @@ subtype DistName,
 
 =head2 Identifier
 
-An L<Identifier|perldata/"Variable-names"> is something that could be used as a
-variable name or other identifier (filehandle, directory handle, subroutine
-name, format name, or label).  Generally,
-it's a bunch of alphanumeric characters not starting with a digit.
+An L<Identifier|perldata/Variable names> is something that could be used as a
+symbol name or other identifier (filehandle, directory handle, subroutine name,
+format name, or label).  It's what you put after the sigil (dollar sign, at
+sign, percent sign) in a variable name.  Generally, it's a bunch of
+alphanumeric characters not starting with a digit.
 
 Although Perl identifiers may contain non-ASCII characters in some
 circumstances, this type does not allow it.  A C<UnicodeIdentifier> type may be
