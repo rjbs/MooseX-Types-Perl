@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+        - update packaging and metadata
+        - minimum required Perl is now v5.12
 
 0.101343  2014-02-01 19:21:28-05:00 America/New_York
           documentation patch for Identifiers (thanks, Karen Etheridge)
